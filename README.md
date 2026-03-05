@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/deryakmrt/ErpSystem">
+  <a href="https://github.com/deryakmrt/DeckERP">
     <img src="assets/deck-logo.svg" alt="DECK ERP Logo" width="300">
   </a>
 
@@ -10,8 +10,15 @@
   
   <p>
     <img src="https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white" />
+    <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
     <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
     <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
+    <img src="https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white" />
+    <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" />
+  </p>
+
+  <p>
+    <a href="https://deck-erp.vercel.app" target="_blank"><strong>🚀 Canlı Demo → deck-erp.vercel.app</strong></a>
   </p>
   
   <br>
@@ -19,36 +26,57 @@
 
 ## Özellikler
 
+- ✅ Ürün Yönetimi (Hammadde, Yarı Mamül, Mamül, Ticari Mal)
+- ✅ Varyasyon & SKU Yönetimi
+- ✅ BOM (Bill of Materials) Yönetimi
+- ✅ Operasyon Rotaları (İşçilik & Makine)
+- ✅ Müşteri (Cari) Yönetimi
+- ✅ Satış Sipariş Yönetimi (Tekil & Parçalı Sevk)
+- ✅ Çoklu Döviz Desteği (TRY, USD, EUR) + TCMB Anlık Kurlar
+- ✅ Satır Bazlı Döviz Seçimi
+- ✅ Kategori & Kriter Yönetimi
+- ✅ Sipariş Durumları & İş Akışı
+- ✅ Depo Yönetimi
+- ✅ STF & ÜSTF PDF Çıktısı
 - ✅ Clean Architecture
-- ✅ CQRS Pattern
 - ✅ RESTful API
 - ✅ PostgreSQL veritabanı
 - ✅ Docker containerization
 - ✅ Swagger/OpenAPI
-- ✅ Unit & Integration Tests
 
 ## Teknoloji Stack
 
 - **Backend:** ASP.NET Core 8
+- **Frontend:** React 18
 - **Database:** PostgreSQL 16
 - **ORM:** Entity Framework Core
-- **Authentication:** JWT
 - **Containerization:** Docker
-- **Orchestration:** Kubernetes (yakında)
+- **Backend Hosting:** Railway
+- **Frontend Hosting:** Vercel
+- **Döviz API:** TCMB
 
-## Kurulum
+## Canlı Deployment
+
+| Servis | Platform | URL |
+|--------|----------|-----|
+| Frontend | Vercel | https://deck-erp.vercel.app |
+| Backend API | Railway | https://deckerp-production.up.railway.app |
+| Veritabanı | Railway PostgreSQL | - |
+
+## Local Kurulum
 
 ### Gereksinimler
 - .NET 8 SDK
 - Docker Desktop
+- Node.js 18+
 - Git
 
 ### Çalıştırma
 
 1. Repository'yi klonla:
 ```bash
-git clone https://github.com/deryakmrt/erp-system.git
-cd erp-system
+git clone https://github.com/deryakmrt/DeckERP.git
+cd DeckERP
 ```
 
 2. Docker servisleri başlat:
@@ -56,40 +84,47 @@ cd erp-system
 docker-compose up -d
 ```
 
-3. Veritabanı migration:
+3. Frontend'i başlat:
 ```bash
-dotnet ef database update --project src/ErpSystem.Infrastructure
+cd client
+npm install
+npm start
 ```
 
-4. API'yi çalıştır:
-```bash
-dotnet run --project src/ErpSystem.Api
-```
-
-API: http://localhost:5000
-Swagger: http://localhost:5000/swagger
+Frontend: http://localhost:3000
+API: http://localhost:5286
+Swagger: http://localhost:5286/swagger
 
 ## Mimari
 ```
-ErpSystem/
-├── API Layer         → Controllers, Middleware
-├── Application       → Business Logic, Services
-├── Domain            → Entities, Interfaces
-└── Infrastructure    → Database, External APIs
+DeckERP/
+├── client/                  → React Frontend
+│   └── src/
+│       ├── pages/           → Sayfalar
+│       ├── services/        → API Servisleri
+│       └── utils/           → Yardımcı Fonksiyonlar
+├── src/
+│   ├── ErpSystem.Api        → Controllers, Middleware
+│   ├── ErpSystem.Application → Business Logic, Services
+│   ├── ErpSystem.Domain     → Entities, Interfaces
+│   └── ErpSystem.Infrastructure → Database, External APIs
+└── docker-compose.yml
 ```
 
 ## Roadmap
 
-- [x] Proje yapısı
-- [x] Database setup
-- [ ] Order Management modülü
-- [ ] Product Catalog
-- [ ] Customer Management
+- [x] Proje yapısı & Clean Architecture
+- [x] PostgreSQL & Docker setup
+- [x] Ürün Yönetimi (4 tip, varyasyon, SKU)
+- [x] BOM & Operasyon Rotaları
+- [x] Müşteri Yönetimi
+- [x] Satış Sipariş Yönetimi
+- [x] Çoklu Döviz & TCMB Entegrasyonu
+- [x] PDF Çıktısı (STF & ÜSTF)
+- [x] Railway + Vercel Cloud Deployment
 - [ ] Authentication & Authorization
-- [ ] Kubernetes deployment
+- [ ] Stok Hareketleri & Raporlama
+- [ ] Üretim Takibi
 - [ ] CI/CD Pipeline
 
 ---
-
-
-
