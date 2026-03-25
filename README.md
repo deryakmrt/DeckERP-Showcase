@@ -24,6 +24,18 @@
   <br>
 </div>
 
+---
+
+## 🚀 Son Güncellemeler (v2.0.0)
+
+Bu sürümde Deck ERP projesi temel bir yapıdan, tam fonksiyonel ve güvenli bir kurumsal yönetim sistemine dönüştürülmüştür.
+
+- **🔐 Login Sistemi (En Büyük Değişiklik):** Sisteme giriş kapısı sıfırdan inşa edildi. "Beni Hatırla", "Şifremi Unuttum" ve modern şifre gizleme/gösterme zekası eklendi.
+- **🎨 Global Stil ve Tema Birliği:** Tüm arayüze modern **Glassmorphism (Cam Efekti)** teması giydirildi. Sayfa bazlı karmaşık CSS dosyaları merkezi bir tasarım sistemine taşınarak sadeleştirildi.
+- **👥 Kullanıcı Yönetimi:** Personel kayıt, düzenleme ve durum kontrolü modülleri eklendi. Telefon numarası formatlayıcı ve profil yönetim paneli aktif edildi.
+- **🔐 Rol ve Yetki Tanımları:** Departman bazlı erişim seviyeleri ve yetkilendirme altyapısı kuruldu. Silinen verileri geri getirme (Soft Delete) özelliği backend ile entegre edildi.
+- **📊 Dashboard Evrimi:** Canlı grafikler (Chart.js), animasyonlu veri sayaçları ve dinamik sayfa linkleri ile ana sayfa tam bir "Kumanda Merkezi"ne dönüştürüldü.
+
 ## Özellikler
 
 - ✅ Ürün Yönetimi (Hammadde, Yarı Mamül, Mamül, Ticari Mal)
